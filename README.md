@@ -12,6 +12,7 @@
 * Salario: Dinero obtenido por los empleados.
 
 * Rol: Papel que desempeña un empleado en el casino, lo cual define su salario.
+  -
 
 * Sala: Lugar en el que se desarrollan una o más partidas de un solo juego.
 
