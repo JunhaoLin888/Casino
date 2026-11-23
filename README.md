@@ -25,3 +25,6 @@
 * Mobiliario: Conjunto de muebles que se utiliza en el casino.
 
 * Juego: Tipo de actividades que se realiza en una partida.
+
+
+linea extra para comparar el branch con main
