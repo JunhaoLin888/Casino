@@ -1,0 +1,16 @@
+Sala tiene solamente un juego:
+
+Cambios hechos respecto al diagrama en el PDF: 
+-Una sala puede tener de 0 a * Mobiliarios. Antes: De 1 a *.
+-Ahora Bar gestiona las bebidas que tiene y el dinero disponible
+-Empleado solo puede estar en 1 bar ya que es unico. Antes: De 0 a *	
+-Cada Mobiliario pertenece a una unica sala
+-Atributo en Cliente DineroTarjeta tipo cambiado a double
+-Atributo en Empleado Salario tipo cambiado a double
+-Atributo hora_salida y la otra hora cambiados a String
+-Atributo extra en Bar DineroDisponible y una clase nueva Bebida
+-Atributo borrado en Mobiliario String Maquina y String IdSala, no se para que sirven
+-La clase Mesa y Maquina que viene despues de la clase Juego y tienen sus atributos
+
+
+Todos los arrays y list que vengan de otra clase no se incluyen como atributo en Modelio
