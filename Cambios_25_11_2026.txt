@@ -10,5 +10,7 @@ Cambios hechos respecto al diagrama en el PDF:
 -Atributo hora_salida y la otra hora cambiados a String
 -Atributo extra en Bar DineroDisponible y una clase nueva Bebida
 -Atributo borrado en Mobiliario String Maquina y String IdSala, no se para que sirven
+-La clase Mesa y Maquina que viene despues de la clase Juego y tienen sus atributos
+
 
 Todos los arrays y list que vengan de otra clase no se incluyen como atributo en Modelio
