@@ -1,1 +1,64 @@
+# Casino
 
+## Modelo del Dominio
+
+---
+
+### 1. Entidades y atributos
+
+- **Cliente:** `String DNI`, `String Nombre`, `String Apellidos`, `Date FechaNacimiento`, `int Fichas`, `boolean Vetado`, `double DineroTarjeta`, `boolean Registrado`
+- **Empleado:** `String DNI`, `String Nombre`, `String Apellidos`, `Date FechaNacimiento`, `String ROL` *(crupier, limpieza, seguridad, admin)*, `double Salario`
+- **Partida:** `String idPartida`, `String hora_inicio`, `String hora_final`
+- **Sala:** `String IdSala`, `boolean Privada`, `boolean Abierta`
+- **Factura:** `String NumeroFactura`, `float Importe`
+- **Bar:** `boolean Abierto`, `double DineroDisponible`
+- **Producto:** `String IdProducto`, `String Nombre`, `double PrecioCompra`, `double PrecioVenta`, `int Stock`
+- **Mobiliario:** `String Modelo`, `int Cantidad`
+- **Juego:** `int NumeroJuego`, `String NombreJuego` *(Ruleta, Poker, Dados, BlackJack)*
+- **Mesa:** *(Especialización / subclase de Juego)*
+- **Máquina:** *(Especialización / subclase de Juego)*
+
+> **Nota de modelado:** Ninguna clase incluye listas o arrays procedentes de otras clases como atributos, ya que las asociaciones se representan mediante relaciones y cardinalidades en el diagrama de Modelio.
+
+---
+
+### 2. Matriz de relaciones
+
+| Entidad origen | Relación | Entidad destino | Cardinalidad | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **Cliente** | genera | **Factura** | `1` → `0..*` | Un cliente puede tener cero o varias facturas; cada factura pertenece a un único cliente. |
+| **Factura** | reserva | **Partida** | `0..*` → `1` | La participación de un cliente en una partida se registra mediante su factura. Una partida puede tener cero o varias facturas asociadas. |
+| **Partida** | se desarrolla en | **Sala** | `0..*` → `1` | Una partida se juega en una única sala; en una sala se pueden desarrollar varias partidas. |
+| **Sala** | ofrece | **Juego** | `0..*` → `1` | Cada sala tiene asignado un único juego; un mismo juego puede ofrecerse en cero o varias salas. |
+| **Sala** | contiene | **Mobiliario** | `1` → `0..*` | Una sala puede tener de cero a varios elementos de mobiliario; cada mobiliario pertenece a una única sala. |
+| **Empleado** | trabaja en | **Sala** | `0..*` → `0..*` | Los empleados (crupier, limpieza, seguridad) son asignados a las distintas salas del casino. |
+| **Empleado** | atiende | **Bar** | `0..*` → `0..1` | Un empleado puede estar asignado como máximo al único bar del casino. |
+| **Bar** | gestiona | **Producto** | `1` → `0..*` | El bar dispone de cero o varios productos (bebidas y artículos) en su inventario. |
+| **Juego** | se especializa en | **Mesa / Máquina** | Herencia | `Mesa` y `Máquina` heredan los atributos y comportamiento base de `Juego`. |
+
+---
+
+### 3. Restricciones de integridad
+
+1. **Unicidad de DNI:** El atributo `DNI` es único e irrepetible tanto para cada `Cliente` como para cada `Empleado`.
+2. **Unicidad de identificadores:** Los atributos `idPartida`, `IdSala`, `NumeroFactura`, `IdProducto` y `NumeroJuego` son únicos dentro de sus respectivas entidades.
+3. **Mayoría de edad:** Todo `Cliente` y `Empleado` debe ser mayor de edad según su `FechaNacimiento`.
+4. **Control de vetos:** Un `Cliente` con `Vetado = true` no puede reservar plaza ni participar en ninguna `Partida` ni utilizar máquinas.
+5. **Participación simultánea:** Un `Cliente` solo puede participar en una única `Partida` activa a la vez (controlado a través de sus facturas activas).
+6. **Coherencia horaria:** En toda `Partida`, `hora_final` debe ser siempre posterior a `hora_inicio`.
+7. **Saldo para fichas:** Un `Cliente` con `DineroTarjeta` insuficiente no puede comprar `Fichas`.
+8. **Un juego por sala:** Cada `Sala` aloja partidas de un único `Juego`. (`Bar` es una entidad independiente y no cuenta como sala).
+9. **Salas cerradas:** Una `Sala` con `Abierta = false` no puede tener ninguna `Partida` en curso.
+10. **Acceso a salas privadas:** Solo los clientes autorizados expresamente por el `Admin` (y que no estén vetados) pueden reservar plaza en una `Sala` con `Privada = true`.
+11. **Stock y precios en el bar:** El `Stock` de cada `Producto` y el `DineroDisponible` del `Bar` no pueden ser negativos (`>= 0`).
+
+---
+
+### 4. Requisitos de retención de datos
+
+- **Cliente:** Se conservan los datos del cliente mientras permanezca registrado (`Registrado = true`). Cuando se da de baja, se eliminan sus datos personales, salvo que figure como vetado (`Vetado = true`), en cuyo caso se conservan para impedir su reingreso.
+- **Empleado:** Se conservan los datos del empleado mientras mantenga relación laboral activa con el casino.
+- **Partida y Factura:** Tanto la `Partida` como las `Factura` asociadas se conservan durante todo el desarrollo de la partida (para controlar quién participa y cumplir la restricción de una partida simultánea por cliente) y se mantienen o archivan una vez finalizada la partida según normativa de facturación.
+- **Sala, Juego y Bar:** Se mantienen de forma permanente mientras estén dados de alta en el casino, actualizando dinámicamente su estado (`Abierta`, `Privada`, `Abierto`, `DineroDisponible`).
+- **Producto:** Se conserva en el inventario del `Bar` mientras forme parte del catálogo, actualizando su `Stock` con cada venta o reposición.
+- **Mobiliario:** Se guarda el registro de cada `Modelo` junto con su `Cantidad` y la `Sala` a la que pertenece, actualizándose cuando se reubica o retira equipamiento.
