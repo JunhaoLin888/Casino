@@ -4,7 +4,7 @@
 
 - **Cliente:** Sujeto que participa en una partida, utiliza una máquina o consume opcionalmente los servicios del bar del casino.
   - **DNI:** Número de identificación único del cliente.
-  - **Nombre:** Nombre del cliente (se pueden repetir).
+  - **Nombre:** Nombre del cliente (se puede repetir).
   - **Apellidos:** Apellidos del cliente (se pueden repetir).
   - **FechaNacimiento:** Día, mes y año de nacimiento del cliente.
   - **Fichas:** Crédito válido para jugar partidas en cualquier juego del casino. Las fichas se obtienen pagando dinero real con la tarjeta de crédito/débito de cada cliente.
@@ -27,9 +27,9 @@
 - **Partida:** Periodo en el que se desarrolla un juego con uno o más clientes.
   - **idPartida:** Número de identificación único de cada partida.
   - **hora_inicio:** Hora en la que empieza la partida.
-  - **hora_salida:** Hora en la que finaliza la partida.
+  - **hora_final:** Hora en la que finaliza la partida.
 
-- **Sala:** Lugar en el que se desarrollan una o más partidas de un solo juego. Puede contener cero o varios elementos de mobiliario.
+- **Sala:** Lugar en el que se desarrollan una o más partidas de un solo juego.
   - **IdSala:** Número de identificación único de cada sala.
   - **Privada:** Indica si una sala es exclusiva del casino y se reserva para el uso de personas determinadas.
   - **Abierta:** Indica si la sala está abierta o no.
@@ -38,17 +38,22 @@
   - **NumeroFactura:** Número de identificación único de cada factura.
   - **Importe:** Monto total de dinero gastado en la factura.
 
-- **Bar:** Zona única del casino donde se sirven y gestionan bebidas y el dinero disponible en caja.
-  - **abierto:** Indica si el bar está abierto o no.
-  - **DineroDisponible:** Cantidad de dinero disponible en la caja del bar.
+- **Bar:** Zona del casino donde se consumen bebidas alcohólicas y otros productos.
+  - **Abierto:** Indica si el bar está abierto o no.
+  - **DineroDisponible:** Cantidad de dinero con la que cuenta el bar para gestionar sus operaciones y la reposición de productos.
 
-- **Bebida:** Producto consumible disponible y gestionado en el bar del casino.
+- **Producto:** Bebida o artículo disponible para su venta y consumo en el bar del casino.
+  - **IdProducto:** Número o código de identificación único de cada producto.
+  - **Nombre:** Nombre de la bebida o producto.
+  - **PrecioCompra:** Coste unitario al que el casino adquiere el producto para su inventario.
+  - **PrecioVenta:** Precio unitario al que se vende el producto a los clientes en el bar.
+  - **Stock:** Cantidad de unidades disponibles de ese producto en el bar.
 
-- **Mobiliario:** Muebles y equipamiento físico pertenecientes a una única sala del casino.
-  - **Modelo:** Tipo o modelo de mueble.
-  - **cantidad:** Número de muebles de cada modelo.
+- **Mobiliario:** Muebles y equipamiento del casino.
+  - **Modelo:** Tipo de mueble
+  - **Cantidad:** Número de muebles de cada modelo.
 
-- **Juego:** Tipo de actividad que se realiza en una partida, ya sea en una mesa o en una máquina.
+- **Juego:** Tipo de actividad que se realiza en una partida.
   - **NumeroJuego:** Número de identificación único de cada juego.
   - **NombreJuego:** Identifica uno de los siguientes juegos:
     - **Ruleta:** Juego que consiste en predecir en qué casilla numerada caerá una bola tras girar dentro de una rueda horizontal.
