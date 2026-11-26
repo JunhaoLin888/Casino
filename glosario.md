@@ -55,8 +55,5 @@
     - **Dados:** Juego que consiste en apostar al resultado de lanzar dos dados en una mesa especial.
     - **BlackJack:** Juego que consiste en competir directamente contra el crupier para sumar 21 puntos o acercarse lo máximo posible sin pasarse.
 
-  - **NombreJuego:** Identifica uno de los siguientes juegos:
-    - **Ruleta:** Tipo de juego en el que consiste en predecir en qué casilla numerada caerá una bola tras girar dentro de una rueda horizontal.
-    - **Poker:** Tipo de juego en el que consiste en juego de cartas y estrategia donde el objetivo principal es ganar el bote de apuestas formando la mejor combinación de cinco cartas o logrando que los demás se retiren.
     - **Dados:** Tipo de juego en el que consiste en apostar al resultado de lanzar dos dados en una mesa especial.
     - **BlackJack:** Tipo de juego en el que consiste en competir directamente contra el croupier para sumar 21 puntos o acercarse lo máximo posible sin pasarte.
