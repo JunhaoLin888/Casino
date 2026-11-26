@@ -10,8 +10,7 @@
   - **Fichas:** Crédito válido para jugar partidas en cualquier juego del casino. Las fichas se obtienen pagando dinero real con la tarjeta de crédito/débito de cada cliente.
   - **Vetado:** Indica si un cliente ha sido expulsado del casino o no.
   - **DineroTarjeta:** Dinero disponible en la tarjeta de crédito/débito del cliente. Si el saldo es insuficiente, el cliente no podrá comprar fichas.
-  - **Registrado:** Estado de un cliente cuyos datos personales constan de alta en el sistema del casino, lo que le permite acceder a sus servicios y participar en partidas mientras no esté vetado.
-  - **Suscripción:** Alta o vinculación activa de un cliente con el casino durante la cual el sistema conserva sus datos personales; al finalizarla, dichos datos son eliminados (salvo que el cliente figure como vetado).
+  - **Registrado:** Estado de un cliente dado de alta en el sistema del casino, lo que le permite acceder a sus servicios y participar en partidas mientras no esté vetado. Al darse de baja, sus datos personales se eliminan del sistema (salvo que figure como vetado).
 
 
 - **Empleado:** Sujeto que trabaja en el casino y realiza la actividad definida por su rol.
