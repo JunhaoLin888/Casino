@@ -2,7 +2,7 @@
 
 ## Glosario
 
-- **Cliente:** Sujeto que participa en una partida, máquina o consume los servicios del casino.
+- **Cliente:** Sujeto que participa en una partida, máquina o que opcionalmente consume los servicios del bar del casino.
   - **DNI:** Número de identificación único del cliente.
   - **Nombre:** Nombre del cliente (se pueden repetir).
   - **Apellidos:** Apellidos del cliente (se pueden repetir).
@@ -27,14 +27,14 @@
   - **hora_inicio:** Hora en la que empieza la partida.
   - **hora_final:** Hora en la que finaliza la partida.
 
-- **Sala:** Lugar en el que se desarrollan una o más partidas de un solo juego.
+- **Sala:** Lugar en el que se desarrollan una o más partidas de uno o varios juegos.
   - **IdSala:** Número de identificación único de cada sala.
   - **Privada:** Sala exclusiva del casino que se reserva para el uso de personas determinadas. Indica si una sala es privada o no.
   - **Abierta:** Indica si la sala está abierta o no.
 
 - **Factura:** Documento que hace el cliente para reservar una partida.
-  - **idFactura:** Número de identificación único de cada factura.
-  - **costo:** Monto de dinero total gastado en la factura.
+  - **NumeroFactura:** Número de identificación único de cada factura.
+  - **Importe:** Monto de dinero total gastado en la factura.
 
 - **Bar:** Zona del bar donde se consumen bebidas alcohólicas.
   - **Abierta:** Indica si el bar está abierto o no.
@@ -44,6 +44,7 @@
   - **Máquina:** Mobiliario en el que un usuario juega metiendo una cantidad de dinero y al salir una combinación ganadora devuelve dinero.
 
 - **Juego:** Tipo de actividades que se realizan en una partida.
+  - **NumeroJuego:** Número de identificación único de cada juego.
   - **NombreJuego:** Identifica uno de los siguientes juegos:
     - **Ruleta:** Tipo de juego en el que consiste en predecir en qué casilla numerada caerá una bola tras girar dentro de una rueda horizontal.
     - **Poker:** Tipo de juego en el que consiste en juego de cartas y estrategia donde el objetivo principal es ganar el bote de apuestas formando la mejor combinación de cinco cartas o logrando que los demás se retiren.
