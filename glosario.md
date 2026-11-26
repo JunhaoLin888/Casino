@@ -62,5 +62,10 @@
     - **BlackJack:** Juego que consiste en competir directamente contra el crupier para sumar 21 puntos o acercarse lo máximo posible sin pasarse.
 
 - **Mesa:** Especialización de juego correspondiente a los juegos de mesa dirigidos por un crupier dentro del casino.
+  - **NumeroMesa:** Número de identificación único de cada mesa.
+  - **numeroJugadores:** Número máximo de clientes que pueden participar simultáneamente en la mesa.
+  - **LimiteApuesta:** Cantidad máxima de dinero o fichas que se permite apostar en la mesa.
 
-- **Máquina:** Especialización de juego correspondiente a las máquinas en las que un cliente introduce una cantidad de dinero y recibe un premio al obtener una combinación ganadora.
+- **Maquina:** Dispositivo de juego del casino en el que un cliente participa introduciendo una cantidad de dinero o fichas y que, al obtener una combinación ganadora, devuelve dinero.
+  - **NumeroMaquina:** Código o identificador único de cada máquina.
+  - **ApuestaMinima:** Cantidad mínima de dinero o fichas necesaria para realizar una jugada en la máquina.
