@@ -12,10 +12,9 @@
   - **DineroTarjeta:** Dinero disponible en la tarjeta de crédito/débito del cliente. Si el saldo es insuficiente, el cliente no podrá comprar fichas.
   - **Registrado:** Estado de un cliente dado de alta en el sistema del casino, lo que le permite acceder a sus servicios y participar en partidas mientras no esté vetado. Al darse de baja, sus datos personales se eliminan del sistema (salvo que figure como vetado).
 
-
 - **Empleado:** Sujeto que trabaja en el casino y realiza la actividad definida por su rol.
   - **DNI:** Número de identificación único del empleado.
-  - **Nombre:** Nombre del empleado (se puede repetir).
+  - **Nombre:** Nombre del empleado (se pueden repetir).
   - **Apellidos:** Apellidos del empleado (se pueden repetir).
   - **FechaNacimiento:** Día, mes y año de nacimiento del empleado.
   - **ROL:** Papel que desempeña cada empleado:
@@ -39,8 +38,16 @@
   - **NumeroFactura:** Número de identificación único de cada factura.
   - **Importe:** Monto total de dinero gastado en la factura.
 
-- **Bar:** Zona del casino donde se consumen bebidas alcohólicas.
-  - **abierto:** Indica si el bar está abierto o no.
+- **Bar:** Zona del casino donde se consumen bebidas alcohólicas y otros productos.
+  - **Abierto:** Indica si el bar está abierto o no.
+  - **DineroDisponible:** Cantidad de dinero con la que cuenta el bar para gestionar sus operaciones y la reposición de productos.
+
+- **Producto:** Bebida o artículo disponible para su venta y consumo en el bar del casino.
+  - **IdProducto:** Número o código de identificación único de cada producto.
+  - **Nombre:** Nombre de la bebida o producto.
+  - **PrecioCompra:** Coste unitario al que el casino adquiere el producto para su inventario.
+  - **PrecioVenta:** Precio unitario al que se vende el producto a los clientes en el bar.
+  - **Stock:** Cantidad de unidades disponibles de ese producto en el bar.
 
 - **Mobiliario:** Muebles y equipamiento del casino.
   - **Modelo:** Tipo de mueble.
