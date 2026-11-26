@@ -53,6 +53,3 @@
     - **Poker:** Juego de cartas y estrategia cuyo objetivo principal es ganar el bote formando la mejor combinación de cinco cartas o logrando que los demás clientes se retiren.
     - **Dados:** Juego que consiste en apostar al resultado de lanzar dos dados en una mesa especial.
     - **BlackJack:** Juego que consiste en competir directamente contra el crupier para sumar 21 puntos o acercarse lo máximo posible sin pasarse.
-
-    - **Dados:** Tipo de juego en el que consiste en apostar al resultado de lanzar dos dados en una mesa especial.
-    - **BlackJack:** Tipo de juego en el que consiste en competir directamente contra el croupier para sumar 21 puntos o acercarse lo máximo posible sin pasarte.
