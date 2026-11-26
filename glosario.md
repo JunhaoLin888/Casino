@@ -50,9 +50,8 @@
   - **Stock:** Cantidad de unidades disponibles de ese producto en el bar.
 
 - **Mobiliario:** Muebles y equipamiento del casino.
-  - **Modelo:** Tipo de mueble.
-  - **Tipo:** Mobiliario en el que un cliente juega introduciendo una cantidad de dinero y que, al obtener una combinación ganadora, devuelve dinero.
-  - **cantidad:** Número de muebles de cada modelo.
+  - **Modelo:** Tipo de mueble
+  - **Cantidad:** Número de muebles de cada modelo.
 
 - **Juego:** Tipo de actividad que se realiza en una partida.
   - **NumeroJuego:** Número de identificación único de cada juego.
@@ -61,3 +60,7 @@
     - **Poker:** Juego de cartas y estrategia cuyo objetivo principal es ganar el bote formando la mejor combinación de cinco cartas o logrando que los demás clientes se retiren.
     - **Dados:** Juego que consiste en apostar al resultado de lanzar dos dados en una mesa especial.
     - **BlackJack:** Juego que consiste en competir directamente contra el crupier para sumar 21 puntos o acercarse lo máximo posible sin pasarse.
+
+- **Mesa:** Especialización de juego correspondiente a los juegos de mesa dirigidos por un crupier dentro del casino.
+
+- **Máquina:** Especialización de juego correspondiente a las máquinas en las que un cliente introduce una cantidad de dinero y recibe un premio al obtener una combinación ganadora.
