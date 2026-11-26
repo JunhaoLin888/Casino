@@ -44,7 +44,8 @@
 
 - **Mobiliario:** Muebles y equipamiento del casino.
   - **Modelo:** Tipo de mueble.
-  - **Máquina:** Mobiliario en el que un cliente juega introduciendo una cantidad de dinero y que, al obtener una combinación ganadora, devuelve dinero.
+  - **Tipo:** Mobiliario en el que un cliente juega introduciendo una cantidad de dinero y que, al obtener una combinación ganadora, devuelve dinero.
+  - **cantidad:** Número de muebles de cada modelo.
 
 - **Juego:** Tipo de actividad que se realiza en una partida.
   - **NumeroJuego:** Número de identificación único de cada juego.
