@@ -40,7 +40,7 @@
   - **Importe:** Monto total de dinero gastado en la factura.
 
 - **Bar:** Zona del casino donde se consumen bebidas alcohólicas.
-  - **abierto:** Indica si el bar está abierto o no.
+  - **Abierto:** Indica si el bar está abierto o no.
 
 - **Mobiliario:** Muebles y equipamiento del casino.
   - **Modelo:** Tipo de mueble.
