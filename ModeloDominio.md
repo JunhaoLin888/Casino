@@ -36,6 +36,8 @@
 | **Mobiliario** | | | | | 1..* | | | | |
 | **Producto** | 0..1 | | | | | | 1 | | |
 
+---
+
 ### 3. Restricciones de integridad
 
 1. **Unicidad de DNI:** El atributo `DNI` es único e irrepetible tanto para cada `Cliente` como para cada `Empleado`.
