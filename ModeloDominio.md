@@ -24,17 +24,17 @@
 
 ### 2. Matriz de Relaciones
 
-| | Cliente | Factura | Partida | Juego | Sala | Empleado | Bar | Producto | Mobiliario |
+| | Factura | Cliente | Partida | Juego | Sala | Empleado | Bar | Mobiliario | Producto |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Cliente** | | `1..*` | | | | | `1` | | |
-| **Factura** | `1` | | `1` | | | | | `1..*` | |
-| **Partida** | | `1..*` | | `1` | | | | | |
-| **Juego** | | | `1..*` | | `1` | | | | |
-| **Sala** | | | | `1..*` | | `1..*` | | | `*` |
-| **Empleado** | | | | | `1` | | `0..1` | | |
-| **Bar** | `*` | | | | | `*` | | `*` | |
-| **Producto** | | `0..1` | | | | | `1` | | |
-| **Mobiliario** | | | | | `1` | | | | |
+| **Factura** | | 1 | 1 | | | | | | 1..* |
+| **Cliente** | * | | | | | | 1 | | |
+| **Partida** | 1..* | | | 1 | | | | | |
+| **Juego** | | | * | | 1 | | | | |
+| **Sala** | | | | 1 | | 1..* | | 1..* | |
+| **Empleado** | | | | | * | | * | | |
+| **Bar** | | * | | | | 1..* | | | * |
+| **Mobiliario** | | | | | 1..* | | | | |
+| **Producto** | 0..1 | | | | | | 1 | | |
 
 ### 3. Restricciones de integridad
 
