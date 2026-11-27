@@ -22,7 +22,7 @@
 
 ---
 
-### 2. Matriz de Relaciones
+### 2. Tabla y diagrama
 
 | | Factura | Cliente | Partida | Juego | Sala | Empleado | Bar | Mobiliario | Producto |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -36,6 +36,19 @@
 | **Mobiliario** | | | | | 1..* | | | | |
 | **Producto** | 0..1 | | | | | | 1 | | |
 
+```mermaid
+classDiagram
+    Cliente "*" -- "1" Bar
+    Cliente "1" -- "*" Factura
+    Bar "*" -- "1..*" Empleado
+    Bar "1" -- "*" Producto
+    Factura "0..1" -- "1..*" Producto
+    Factura "1..*" -- "1" Partida
+    Empleado "1..*" -- "*" Sala
+    Partida "*" -- "1" Juego
+    Sala "1" -- "1" Juego
+    Sala "1..*" -- "1..*" Mobiliario
+```
 ---
 
 ### 3. Restricciones de integridad
