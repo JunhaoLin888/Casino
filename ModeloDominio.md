@@ -22,21 +22,19 @@
 
 ---
 
-### 2. Matriz de relaciones
+### 2. Matriz de Relaciones
 
-| Entidad origen | Relación | Entidad destino | Cardinalidad | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **Cliente** | genera | **Factura** | `1` → `0..*` | Un cliente puede tener cero o varias facturas; cada factura pertenece a un único cliente. |
-| **Factura** | reserva | **Partida** | `0..*` → `1` | La participación de un cliente en una partida se registra mediante su factura. Una partida puede tener cero o varias facturas asociadas. |
-| **Partida** | se desarrolla en | **Sala** | `0..*` → `1` | Una partida se juega en una única sala; en una sala se pueden desarrollar varias partidas. |
-| **Sala** | ofrece | **Juego** | `0..*` → `1` | Cada sala tiene asignado un único juego; un mismo juego puede ofrecerse en cero o varias salas. |
-| **Sala** | contiene | **Mobiliario** | `1` → `0..*` | Una sala puede tener de cero a varios elementos de mobiliario; cada mobiliario pertenece a una única sala. |
-| **Empleado** | trabaja en | **Sala** | `0..*` → `0..*` | Los empleados (crupier, limpieza, seguridad) son asignados a las distintas salas del casino. |
-| **Empleado** | atiende | **Bar** | `0..*` → `0..1` | Un empleado puede estar asignado como máximo al único bar del casino. |
-| **Bar** | gestiona | **Producto** | `1` → `0..*` | El bar dispone de cero o varios productos (bebidas y artículos) en su inventario. |
-| **Juego** | se especializa en | **Mesa / Maquina** | Herencia | `Mesa` y `Maquina` heredan los atributos y comportamiento base de `Juego`. |
-
----
+| | Cliente | Factura | Partida | Juego | Sala | Empleado | Bar | Producto | Mobiliario |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Cliente** | | `1..*` | | | | | `1` | | |
+| **Factura** | `1` | | `1` | | | | | `1..*` | |
+| **Partida** | | `1..*` | | `1` | | | | | |
+| **Juego** | | | `1..*` | | `1` | | | | |
+| **Sala** | | | | `1..*` | | `1..*` | | | `*` |
+| **Empleado** | | | | | `1` | | `0..1` | | |
+| **Bar** | `*` | | | | | `*` | | `*` | |
+| **Producto** | | `0..1` | | | | | `1` | | |
+| **Mobiliario** | | | | | `1` | | | | |
 
 ### 3. Restricciones de integridad
 
