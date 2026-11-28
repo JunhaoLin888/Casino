@@ -22,21 +22,37 @@
 
 ---
 
-### 2. Tabla
+## 2. Tabla y diagrama
 
 | | Factura | Cliente | Partida | Juego | Sala | Empleado | Bar | Mobiliario | Producto |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Factura** | | 1 | 1 | | | | | | 1..* |
-| **Cliente** | * | | | | | | 1 | | |
+| **Factura** | | 1 | 0..1 | | | | | | * |
+| **Cliente** | * | | | | | | 0..1 | | |
 | **Partida** | 1..* | | | 1 | | | | | |
-| **Juego** | | | * | | 1 | | | | |
-| **Sala** | | | | 1 | | 1..* | | 1..* | |
-| **Empleado** | | | | | * | | * | | |
+| **Juego** | | | * | | 1..* | | | | |
+| **Sala** | | | | 1 | | 1..* | | * | |
+| **Empleado** | | | | | * | | 0..1 | | |
 | **Bar** | | * | | | | 1..* | | | * |
-| **Mobiliario** | | | | | 1..* | | | | |
-| **Producto** | 0..1 | | | | | | 1 | | |
+| **Mobiliario** | | | | | 1 | | | | |
+| **Producto** | * | | | | | | 1 | | |
 
 ---
+
+```mermaid
+classDiagram
+    Cliente "*" -- "0..1" Bar
+    Cliente "1" -- "*" Factura
+    Factura "1..*" -- "0..1" Partida
+    Factura "*" -- "*" Producto
+    Partida "*" -- "1" Juego
+    Juego <|-- Mesa
+    Juego <|-- Maquina
+    Juego "1" -- "1..*" Sala
+    Sala "*" -- "1..*" Empleado
+    Sala "1" -- "*" Mobiliario
+    Bar "0..1" -- "1..*" Empleado
+    Bar "1" -- "*" Producto
+```
 
 ### 3. Restricciones de integridad
 
