@@ -22,7 +22,7 @@
 
 ---
 
-## 2. Tabla y diagrama
+## 2. Tabla de relaciones
 
 | | Factura | Cliente | Partida | Juego | Sala | Empleado | Bar | Mobiliario | Producto |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -37,6 +37,8 @@
 | **Producto** | * | | | | | | 1 | | |
 
 ---
+
+## Diagrama de clases
 
 ```text
                      ┌──────────────┐
