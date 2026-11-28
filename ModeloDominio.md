@@ -38,7 +38,7 @@
 
 ---
 
-## Diagrama de clases
+## 3. Diagrama de clases
 
 
 ```text
@@ -72,6 +72,7 @@
 │  Mobiliario  │
 └──────────────┘
 ```
+---
 
 ## Explicación relaciones
 
@@ -113,7 +114,9 @@
   - **Con Factura (`*`):** Un mismo producto puede aparecer en cero o múltiples facturas distintas.
   - **Con Bar (`1`):** Cada producto pertenece al inventario del único bar del casino.
 
-### 3. Restricciones de integridad
+---
+
+### 4. Restricciones de integridad
 
 1. **Unicidad de DNI:** El atributo `DNI` es único e irrepetible tanto para cada `Cliente` como para cada `Empleado`.
 2. **Unicidad de identificadores:** Los atributos `idPartida`, `IdSala`, `NumeroFactura`, `IdProducto`, `NumeroJuego`, `NumeroMesa` y `NumeroMaquina` son únicos dentro de sus respectivas entidades.
@@ -130,7 +133,7 @@
 
 ---
 
-### 4. Requisitos de retención de datos
+### 5. Requisitos de retención de datos
 
 - **Cliente:** Se conservan los datos del cliente mientras permanezca registrado (`Registrado = true`). Cuando se da de baja, se eliminan sus datos personales, salvo que figure como vetado (`Vetado = true`), en cuyo caso se conservan para impedir su reingreso.
 - **Empleado:** Se conservan los datos del empleado mientras mantenga relación laboral activa con el casino.
