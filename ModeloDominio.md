@@ -73,6 +73,46 @@
 └──────────────┘
 ```
 
+## Explicación relaciones
+
+- **Factura:**
+  - **Con Cliente (`1`):** Toda factura pertenece siempre a un único cliente.
+  - **Con Partida (`0..1`):** Una factura puede reservar plaza como máximo en una partida, o en ninguna si solo corresponde a consumiciones del bar.
+  - **Con Producto (`*`):** Una factura puede incluir cero o varios productos del bar.
+
+- **Cliente:**
+  - **Con Factura (`*`):** Un cliente puede generar cero o varias facturas a lo largo de su estancia.
+  - **Con Bar (`0..1`):** Un cliente puede acudir opcionalmente al único bar del casino.
+
+- **Partida:**
+  - **Con Factura (`1..*`):** Toda partida necesita al menos una factura asociada correspondiente a los clientes que participan en ella.
+  - **Con Juego (`1`):** Cada partida se desarrolla en torno a un único juego.
+
+- **Juego:**
+  - **Con Partida (`*`):** De un mismo juego pueden desarrollarse cero o varias partidas.
+  - **Con Sala (`1..*`):** Un juego se ofrece en al menos una sala y puede estar disponible en varias salas distintas *(además de especializarse por herencia en `Mesa` y `Maquina`)*.
+
+- **Sala:**
+  - **Con Juego (`1`):** Cada sala está destinada exclusivamente a un único juego.
+  - **Con Empleado (`1..*`):** Toda sala debe estar atendida por al menos un empleado.
+  - **Con Mobiliario (`*`):** Una sala puede contener cero o varios tipos de mobiliario.
+
+- **Empleado:**
+  - **Con Sala (`*`):** Un empleado puede estar asignado a cero o varias salas.
+  - **Con Bar (`0..1`):** Un empleado puede estar asignado o no al único bar del casino.
+
+- **Bar:**
+  - **Con Cliente (`*`):** El bar puede atender a cero o varios clientes.
+  - **Con Empleado (`1..*`):** El bar debe estar atendido por al menos un empleado.
+  - **Con Producto (`*`):** El bar gestiona un catálogo de cero o varios productos.
+
+- **Mobiliario:**
+  - **Con Sala (`1`):** Cada registro de mobiliario pertenece a una única sala concreta.
+
+- **Producto:**
+  - **Con Factura (`*`):** Un mismo producto puede aparecer en cero o múltiples facturas distintas.
+  - **Con Bar (`1`):** Cada producto pertenece al inventario del único bar del casino.
+
 ### 3. Restricciones de integridad
 
 1. **Unicidad de DNI:** El atributo `DNI` es único e irrepetible tanto para cada `Cliente` como para cada `Empleado`.
